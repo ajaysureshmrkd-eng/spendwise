@@ -1,5 +1,5 @@
 # pip intall google-genai
-from google import genai
+# from google import genai
 
 
 # step1: authenticate
