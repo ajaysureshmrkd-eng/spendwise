@@ -1,0 +1,110 @@
+#api call for create user account
+###
+POST http://127.0.0.1:8000/v1/spending/register/
+Content-Type: application/json
+
+{
+    "username":"react",
+    "email":"react@gmail.com",
+    "password":"password@123"
+
+}
+
+# api call for getting token
+###
+POST http://127.0.0.1:8000/v1/spending/token/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "password":"password@123"
+}
+
+
+#api call for current user details
+
+###
+GET http://127.0.0.1:8000/v1/spending/me/
+Accept: application/json
+# Authorization: Basic react:password@123
+Authorization: Token f7b8f7d80a1c60bfe36964f550f3073b669ff9ba
+
+
+===================================================================
+
+# api call for listing
+###
+GET http://127.0.0.1:8000/v1/spending/expenses/
+Accept: application/json
+# Authorization: Basic django:password@123
+Authorization: Token f7b8f7d80a1c60bfe36964f550f3073b669ff9ba
+
+
+# api call for adding
+
+###
+POST http://127.0.0.1:8000/v1/spending/expenses/
+Content-Type: application/json
+# Authorization: Basic react:password@123
+Authorization: Token f7b8f7d80a1c60bfe36964f550f3073b669ff9ba
+
+{
+    "title":"trip",
+    "amount":15000,
+    "category":"SHOPPING",
+    " payment_method":"upi"
+
+}
+
+
+# api call for retrieve
+
+###
+GET http://127.0.0.1:8000/v1/spending/expenses/1/
+Accept: application/json
+# Authorization: Basic django:password@123
+Authorization: Token f7b8f7d80a1c60bfe36964f550f3073b669ff9ba
+
+#api call for update
+
+###
+PUT http://127.0.0.1:8000/v1/spending/expenses/1/
+Content-Type: application/json
+# Authorization: Basic django:password@123
+Authorization: Token f7b8f7d80a1c60bfe36964f550f3073b669ff9ba
+
+{
+  "id": 1,
+  "title": "Room Rent",
+  "amount": "8000.00",
+  "category": "BILLS",
+  "priority": "need",
+  "payment_method": "upi",
+  "created_at": "2026-10-09T06:11:56.851059Z",
+  "updated_at": "2026-10-09T06:11:56.851080Z",
+  "owner": 1
+}
+
+
+# api call for delete
+
+###
+DELETE http://127.0.0.1:8000/v1/spending/expenses/9/
+Accept: application/json
+# Authorization: Basic django:password@123
+Authorization: Token f7b8f7d80a1c60bfe36964f550f3073b669ff9ba
+
+
+# api call for listing
+###
+GET http://127.0.0.1:8000/v1/spending/expenses/summary/
+Accept: application/json
+Authorization:  Token f7b8f7d80a1c60bfe36964f550f3073b669ff9ba
+
+
+# api call for lbudget plan
+###
+GET http://127.0.0.1:8000/v1/spending/budgetplan/
+Accept: application/json
+Authorization:  Token f7b8f7d80a1c60bfe36964f550f3073b669ff9ba
+
